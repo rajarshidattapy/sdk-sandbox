@@ -1,0 +1,33 @@
+{
+  "name": "bento-sdk-sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Integration sandbox for the published @bento.fun/sdk npm package",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bentodotfun/sdk-sandbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bentodotfun/sdk-sandbox/issues"
+  },
+  "homepage": "https://github.com/Bentodotfun/sdk-sandbox#readme",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "tsx src/run-all.ts",
+    "test:import": "tsx src/import-smoke.ts",
+    "test:markets": "tsx src/markets-public.ts",
+    "test:tournaments": "tsx src/tournaments-public.ts"
+  },
+  "dependencies": {
+    "@bento.fun/sdk": "^0.5.3",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

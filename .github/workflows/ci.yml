@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  import-smoke:
+    name: npm import smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Import smoke (no network)
+        run: npm run test:import
+
+  live-apis:
+    name: live API smoke
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.repository == 'Bentodotfun/sdk-sandbox'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Live public API tests
+        env:
+          BENTO_URL: ${{ secrets.BENTO_URL || 'https://mainnet-server.bento.fun' }}
+          PARLAY_TOURNMENT_URL: ${{ secrets.PARLAY_TOURNMENT_URL || 'https://bento-fun-tournaments-backend.onrender.com' }}
+        run: npm test
