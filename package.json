@@ -22,7 +22,7 @@
     "test:tournaments": "tsx src/tournaments-public.ts"
   },
   "dependencies": {
-    "@bento.fun/sdk": "^0.5.4",
+    "@bento.fun/sdk": "^0.5.5",
     "dotenv": "^16.4.7"
   },
   "devDependencies": {
