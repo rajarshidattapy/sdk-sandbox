@@ -1,3 +1,4 @@
+import { pathToFileURL } from 'node:url';
 import { createBentoSdk, walletAuthProvider } from '@bento.fun/sdk';
 import { optionalEnv, requireEnv } from './env.js';
 
@@ -46,7 +47,7 @@ export async function runTournamentsPublic(): Promise<void> {
   ok('tournaments public API passed');
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   runTournamentsPublic().catch((error) => {
     console.error(error);
     process.exit(1);

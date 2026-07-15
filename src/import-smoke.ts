@@ -1,3 +1,4 @@
+import { pathToFileURL } from 'node:url';
 import {
   BENTO_API_PREFIX,
   createBentoSdk,
@@ -32,7 +33,7 @@ export async function runImportSmoke(): Promise<void> {
   ok('import smoke passed');
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   runImportSmoke().catch((error) => {
     console.error(error);
     process.exit(1);
