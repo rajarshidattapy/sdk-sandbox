@@ -22,7 +22,7 @@ npm test              # live public API checks
 | Variable | Required | Purpose |
 |----------|----------|---------|
 | `BENTO_URL` | Yes (for live tests) | Markets host, e.g. `https://mainnet-server.bento.fun` |
-| `PARLAY_TOURNMENT_URL` | No | Tournaments / parlay host; omit to skip tournaments checks |
+| `PARLAY_TOURNAMENT_URL` | No | Tournaments / parlay host; omit to skip tournaments checks |
 
 ## Scripts
 

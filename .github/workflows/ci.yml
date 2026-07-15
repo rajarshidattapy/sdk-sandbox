@@ -41,5 +41,5 @@ jobs:
       - name: Live public API tests
         env:
           BENTO_URL: ${{ secrets.BENTO_URL || 'https://mainnet-server.bento.fun' }}
-          PARLAY_TOURNMENT_URL: ${{ secrets.PARLAY_TOURNMENT_URL || 'https://bento-fun-tournaments-backend.onrender.com' }}
+          PARLAY_TOURNAMENT_URL: ${{ secrets.PARLAY_TOURNAMENT_URL || 'https://bento-fun-tournaments-backend.onrender.com' }}
         run: npm test

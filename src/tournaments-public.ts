@@ -8,10 +8,10 @@ function ok(label: string, detail?: string): void {
 
 export async function runTournamentsPublic(): Promise<void> {
   const baseUrl = requireEnv('BENTO_URL');
-  const tournamentsBaseUrl = optionalEnv('PARLAY_TOURNMENT_URL');
+  const tournamentsBaseUrl = optionalEnv('PARLAY_TOURNAMENT_URL');
 
   if (!tournamentsBaseUrl) {
-    console.log('\n[tournaments-public] skipped — set PARLAY_TOURNMENT_URL in .env');
+    console.log('\n[tournaments-public] skipped — set PARLAY_TOURNAMENT_URL in .env');
     return;
   }
 
